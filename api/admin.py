@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hero
+from .models import Meal
 
-# Registers the Hero model with Django admin
-admin.site.register(Hero)
+# Registers the Meal model with Django admin
+admin.site.register(Meal)

@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Hero
+from .models import Meal
 
 
-class HeroSerializer(serializers.HyperlinkedModelSerializer):
+class MealTimeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = Hero
-        fields = ('name', 'alias')
+        model = Meal
+        fields = ('meal_name', 'details', 'price')

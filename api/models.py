@@ -1,12 +1,13 @@
 from django.db import models
 
 
-class Hero(models.Model):
-    """ Creates a Hero model to interact with """
+class Meal(models.Model):
+    """ Creates a Meal model to interact with """
 
-    name = models.CharField(max_length=50)
-    alias = models.CharField(max_length=50)
+    meal_name = models.CharField(max_length=50)
+    details = models.CharField(max_length=50)
+    price = models.DecimalField(max_digits=4, decimal_places=2)
 
 
     def __str__(self):
-        return self.name
+        return self.meal_name
