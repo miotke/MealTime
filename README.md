@@ -4,3 +4,8 @@ A simple Django REST API that will serve a lunch menu for the week. This API wil
 an iOS app(SwiftUI?) that I will build as well.
 
 This project is for learning purposes.
+
+
+### Usage
+* Create a Python virtual environment.
+* Install requirements.txt, `pip install -r requirements.txt`
