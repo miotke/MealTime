@@ -4,6 +4,8 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'meals', views.MealViewSet)
+router.register(r'desserts', views.DessertViewSet)
+
 
 # Wire up our API using automatic URL routing
 # Additionally, we include login URLs for the browsable API
