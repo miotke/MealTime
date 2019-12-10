@@ -31,3 +31,13 @@ class Dessert(models.Model):
 
     def __str__(self):
         return self.dessert_name
+
+
+class Drink(models.Model):
+
+    drink_name = models.CharField(max_length=50)
+    price = models.DecimalField(max_digits=4, decimal_places=2)
+
+
+    def __str__(self):
+        return self.drink_name

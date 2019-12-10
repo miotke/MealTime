@@ -5,6 +5,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r'meals', views.MealViewSet)
 router.register(r'desserts', views.DessertViewSet)
+router.register(r'drinks', views.DrinkViewSet)
 
 
 # Wire up our API using automatic URL routing

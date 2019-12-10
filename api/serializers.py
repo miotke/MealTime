@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Meal
 from .models import Dessert
+from .models import Drink
 
 
 class MealTimeSerializer(serializers.HyperlinkedModelSerializer):
@@ -15,3 +16,10 @@ class DessertSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Dessert
         fields = ('dessert_name', 'details', 'price')
+
+
+class DrinkSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = Drink
+        fields = ('drink_name', 'price')
