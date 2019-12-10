@@ -25,7 +25,7 @@ SECRET_KEY = '@23nox=l*%^savif@w_*wc_^&@kc_=j_m&1p-q2r0vy_+7vx)w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['afternoon-stream-26309.herokuapp.com']
 
 
 # Application definition
