@@ -1,6 +1,9 @@
 from django.db import models
 
 
+class Response():
+    pass
+
 class Meal(models.Model):
     """ Creates a Meal model to interact with """
 
