@@ -13,16 +13,10 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var mealPriceLabel: UILabel!
     @IBOutlet weak var shortDescription: UILabel!
-    
-    var price = "10.99"
-    
+            
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        mealNameLabel.text = "Burger"
-        mealPriceLabel.text = "$\(price)"
-        shortDescription.text = "Just some basic ass burger"
-    }
+        }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

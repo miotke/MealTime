@@ -9,14 +9,15 @@
 import Foundation
 
 struct MealResponse: Decodable {
-    var response: Meals
+//    var response: Meals
 }
 
 struct Meals: Decodable {
-    var meals: [MealDetail]
+//    var response: Meals
+    var meals: [Meal]
 }
 
-struct MealDetail: Decodable {
+struct Meal: Decodable {
     var meal_name: String
     var details: String
     var sides: String

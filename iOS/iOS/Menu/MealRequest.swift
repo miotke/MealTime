@@ -24,7 +24,7 @@ struct MealRequest {
         self.resourceURL = resourceURL
     }
     
-    func getMeal (completion: @escaping(Result<[MealDetail], MealError>) -> Void) {
+    func getMeal (completion: @escaping(Result<[Meal], MealError>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, _,_ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
@@ -33,8 +33,8 @@ struct MealRequest {
             
             do {
                 let decoder = JSONDecoder()
-                let mealResponse = try decoder.decode(MealResponse.self, from: jsonData)
-                let mealDetails = mealResponse.response.meals
+                let mealResponse = try decoder.decode(Meals.self, from: jsonData)
+                let mealDetails = mealResponse.meals
                 print("Hello \(mealDetails)")
                 completion(.success(mealDetails))
             } catch {

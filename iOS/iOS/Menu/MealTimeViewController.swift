@@ -11,6 +11,16 @@ import UIKit
 class MealTimeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+  
+    var listOfMeals = [Meal]() {
+    // Computed property
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                print("MEALS: \(self.listOfMeals)")
+            }
+        }
+    }
     
     let menuCell = "menuCell"
     
@@ -24,6 +34,7 @@ class MealTimeViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         registerNib()
+    
     }
     
     func registerNib() {
@@ -34,12 +45,23 @@ class MealTimeViewController: UIViewController {
 
 // MARK: - Table View
 extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        print("MEALS: \(listOfMeals.count)")
+        return listOfMeals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
+        let meal = listOfMeals[indexPath.row]
+        
+        cell.mealNameLabel.text = meal.meal_name
+        cell.mealPriceLabel?.text = meal.price
+        cell.shortDescription?.text = meal.details
+
         return cell
     }
 }

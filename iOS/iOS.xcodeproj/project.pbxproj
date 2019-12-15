@@ -15,6 +15,8 @@
 		4C5CF582239EEDA4002AF4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5CF580239EEDA4002AF4CA /* LaunchScreen.storyboard */; };
 		4C6515DD239EEE2000D2F9E5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6515DB239EEE2000D2F9E5 /* MenuCell.swift */; };
 		4C6515DE239EEE2000D2F9E5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */; };
+		4CD35D4923A69EDD007A613A /* MealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4823A69EDD007A613A /* MealData.swift */; };
+		4CD35D4B23A69FED007A613A /* MealRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4A23A69FED007A613A /* MealRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4C5CF583239EEDA4002AF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C6515DB239EEE2000D2F9E5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		4CD35D4823A69EDD007A613A /* MealData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealData.swift; sourceTree = "<group>"; };
+		4CD35D4A23A69FED007A613A /* MealRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			children = (
 				4C6515DA239EEE0800D2F9E5 /* View */,
 				4C5CF579239EEDA3002AF4CA /* MealTimeViewController.swift */,
+				4CD35D4823A69EDD007A613A /* MealData.swift */,
+				4CD35D4A23A69FED007A613A /* MealRequest.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5CF57A239EEDA3002AF4CA /* MealTimeViewController.swift in Sources */,
+				4CD35D4923A69EDD007A613A /* MealData.swift in Sources */,
+				4CD35D4B23A69FED007A613A /* MealRequest.swift in Sources */,
 				4C5CF576239EEDA3002AF4CA /* AppDelegate.swift in Sources */,
 				4C6515DD239EEE2000D2F9E5 /* MenuCell.swift in Sources */,
 				4C5CF578239EEDA3002AF4CA /* SceneDelegate.swift in Sources */,
