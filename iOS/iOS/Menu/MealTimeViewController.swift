@@ -13,7 +13,7 @@ class MealTimeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
       
     let menuCell = "menuCell"
-    var mealData = [Meal]()
+    var meals = [Meal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,7 @@ class MealTimeViewController: UIViewController {
         
         registerNib()
         
-        print(mealData)
-
-        if let url = Bundle.main.url(forResource: "JSONData", withExtension: "json") {
-            print(url)
-        }
+        parseMeals()
     }
     
     func registerNib() {
@@ -37,18 +33,12 @@ class MealTimeViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: menuCell)
     }
     
-    func loadJSON(filename fileName: String) -> [Meal]? {
-        if let url = Bundle.main.url(forResource: "JSONData", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(Meals.self, from: data)
-                return jsonData.meal
-            } catch {
-                print("Just an error")
-            }
-        }
-        return mealData
+    func parseMeals() {
+        let url = Bundle.main.url(forResource:"JSONData", withExtension: "json")!
+        let jsonData = try! Data(contentsOf: url)
+        self.meals = try! JSONDecoder().decode([Meal].self, from: jsonData)
+        
+        self.tableView.reloadData()
     }
 }
 
@@ -59,15 +49,16 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mealData.count
+        return self.meals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
-        let meal = mealData.self[indexPath.row]
+        let mealCellData = self.meals[indexPath.row]
         
-        cell.mealNameLabel.text = meal.meal_name
-        cell.mealNameLabel?.text = "meal.mealName"
+        cell.mealNameLabel.text = mealCellData.meal_name
+        cell.mealPriceLabel.text = mealCellData.price
+        cell.shortDescription.text = mealCellData.details
         
         return cell
     }
