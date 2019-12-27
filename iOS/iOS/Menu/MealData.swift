@@ -8,29 +8,17 @@
 
 import Foundation
 
-struct Meals: Decodable, Hashable {
-    let meal: [Meal]
+struct Meals: Codable {
+    var meal: [Meal]
 }
 
-struct Meal: Decodable, Hashable {
-    let mealName: String
+//struct Meals: Decodable, Hashable {
+//    var meal: [Meal]
+//}
+
+struct Meal: Decodable, Hashable, Encodable {
+    let meal_name: String
     let details: String
     let sides: String
     let price: String
 }
-
-//struct MealResponse: Decodable {
-////    var response: Meals
-//}
-//
-//struct Meals: Decodable {
-////    var response: Meals
-//    var meals: [Meal]
-//}
-//
-//struct Meal: Decodable {
-//    var meal_name: String
-//    var details: String
-//    var sides: String
-//    var price: String
-//}

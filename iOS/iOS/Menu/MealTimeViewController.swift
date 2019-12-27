@@ -10,11 +10,10 @@ import UIKit
 
 class MealTimeViewController: UIViewController {
 
-    var mealData = [Meal]()
-    
     @IBOutlet weak var tableView: UITableView!
       
     let menuCell = "menuCell"
+    var mealData = [Meal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,10 @@ class MealTimeViewController: UIViewController {
         registerNib()
         
         print(mealData)
-    
+
+        if let url = Bundle.main.url(forResource: "JSONData", withExtension: "json") {
+            print(url)
+        }
     }
     
     func registerNib() {
@@ -43,10 +45,10 @@ class MealTimeViewController: UIViewController {
                 let jsonData = try decoder.decode(Meals.self, from: data)
                 return jsonData.meal
             } catch {
-                print("Error")
+                print("Just an error")
             }
         }
-        return nil
+        return mealData
     }
 }
 
@@ -57,7 +59,6 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return mealData.count
     }
     
@@ -65,7 +66,8 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
         let meal = mealData.self[indexPath.row]
         
-        cell.mealNameLabel?.text = meal.mealName
+        cell.mealNameLabel.text = meal.meal_name
+        cell.mealNameLabel?.text = "meal.mealName"
         
         return cell
     }
