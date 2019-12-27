@@ -15,6 +15,8 @@
 		4C5CF582239EEDA4002AF4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5CF580239EEDA4002AF4CA /* LaunchScreen.storyboard */; };
 		4C6515DD239EEE2000D2F9E5 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6515DB239EEE2000D2F9E5 /* MenuCell.swift */; };
 		4C6515DE239EEE2000D2F9E5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */; };
+		4C79C07F23B590F000A51E49 /* JSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C79C07E23B590F000A51E49 /* JSONData.json */; };
+		4C79C08123B5919900A51E49 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */; };
 		4CD35D4923A69EDD007A613A /* MealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4823A69EDD007A613A /* MealData.swift */; };
 		4CD35D4B23A69FED007A613A /* MealRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4A23A69FED007A613A /* MealRequest.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 		4C5CF583239EEDA4002AF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C6515DB239EEE2000D2F9E5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		4C79C07E23B590F000A51E49 /* JSONData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = JSONData.json; path = iOS/JSONData.json; sourceTree = SOURCE_ROOT; };
+		4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		4CD35D4823A69EDD007A613A /* MealData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealData.swift; sourceTree = "<group>"; };
 		4CD35D4A23A69FED007A613A /* MealRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,8 @@
 				4C5CF57E239EEDA4002AF4CA /* Assets.xcassets */,
 				4C5CF580239EEDA4002AF4CA /* LaunchScreen.storyboard */,
 				4C5CF583239EEDA4002AF4CA /* Info.plist */,
+				4C79C07E23B590F000A51E49 /* JSONData.json */,
+				4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 				4C5CF582239EEDA4002AF4CA /* LaunchScreen.storyboard in Resources */,
 				4C5CF57F239EEDA4002AF4CA /* Assets.xcassets in Resources */,
 				4C6515DE239EEE2000D2F9E5 /* MenuCell.xib in Resources */,
+				4C79C07F23B590F000A51E49 /* JSONData.json in Resources */,
 				4C5CF57D239EEDA3002AF4CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +179,7 @@
 				4CD35D4B23A69FED007A613A /* MealRequest.swift in Sources */,
 				4C5CF576239EEDA3002AF4CA /* AppDelegate.swift in Sources */,
 				4C6515DD239EEE2000D2F9E5 /* MenuCell.swift in Sources */,
+				4C79C08123B5919900A51E49 /* Bundle-Decodable.swift in Sources */,
 				4C5CF578239EEDA3002AF4CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

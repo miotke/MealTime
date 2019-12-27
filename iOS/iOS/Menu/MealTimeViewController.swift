@@ -10,23 +10,14 @@ import UIKit
 
 class MealTimeViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-  
-    var listOfMeals = [Meal]() {
-    // Computed property
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                print("MEALS: \(self.listOfMeals)")
-            }
-        }
-    }
+    var mealData = [Meal]()
     
+    @IBOutlet weak var tableView: UITableView!
+      
     let menuCell = "menuCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -34,12 +25,28 @@ class MealTimeViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         registerNib()
+        
+        print(mealData)
     
     }
     
     func registerNib() {
         let nib = UINib(nibName: "MenuCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: menuCell)
+    }
+    
+    func loadJSON(filename fileName: String) -> [Meal]? {
+        if let url = Bundle.main.url(forResource: "JSONData", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(Meals.self, from: data)
+                return jsonData.meal
+            } catch {
+                print("Error")
+            }
+        }
+        return nil
     }
 }
 
@@ -50,18 +57,16 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("MEALS: \(listOfMeals.count)")
-        return listOfMeals.count
+        
+        return mealData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
-        let meal = listOfMeals[indexPath.row]
+        let meal = mealData.self[indexPath.row]
         
-        cell.mealNameLabel.text = meal.meal_name
-        cell.mealPriceLabel?.text = meal.price
-        cell.shortDescription?.text = meal.details
-
+        cell.mealNameLabel?.text = meal.mealName
+        
         return cell
     }
 }
