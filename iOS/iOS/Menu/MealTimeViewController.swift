@@ -16,6 +16,7 @@ class MealTimeViewController: UIViewController {
     let mealDataApiUrl = "https://afternoon-stream-26309.herokuapp.com/meals/"
     
     var newMeals = [Meal]()
+    var mealName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +38,11 @@ class MealTimeViewController: UIViewController {
     
     func parse(json: Data) {
         let decoder = JSONDecoder()
-        if let jsonMeals = try? decoder.decode(Meals.self, from: json) {
-            print(jsonMeals)
-            newMeals = jsonMeals.results
+        if let jsonMeals = try? decoder.decode([Meal].self, from: json) {
+            print(jsonMeals.count)
+            for r in jsonMeals {
+                newMeals.append(r)
+            }
             print(newMeals)
             tableView.reloadData()
         }
@@ -64,7 +67,7 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
         let meal = newMeals[indexPath.row]
-            
+    
         cell.mealNameLabel?.text = meal.meal_name
         cell.mealPriceLabel?.text = meal.price
         cell.shortDescription?.text = meal.details

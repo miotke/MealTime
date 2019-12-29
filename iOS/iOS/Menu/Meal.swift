@@ -14,7 +14,3 @@ struct Meal: Codable {
     let sides: String
     let price: String
 }
-
-struct Meals: Codable {
-    var results: [Meal]
-}
