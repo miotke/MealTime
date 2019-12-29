@@ -12,11 +12,14 @@ class Meal(models.Model):
         ('soup', 'Soup of the day'),
         ('veggies', 'Assorted Veggies'),
         ('bread', 'Bread'),
+        ('rice', 'Rice'),
+        ('none', 'None'),
+        ('other', 'Other'),
     ]
 
 
     meal_name = models.CharField(max_length=50)
-    sides = models.CharField(max_length=20, choices=SIDES_CHOICES, default='chips')
+    sides = models.CharField(max_length=20, choices=SIDES_CHOICES, default='none')
     details = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
