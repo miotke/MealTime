@@ -13,7 +13,9 @@ class MealTimeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
       
     let menuCell = "menuCell"
-    var meals = [Meal]()
+    let mealDataApiUrl = "https://afternoon-stream-26309.herokuapp.com/meals/"
+    
+    var newMeals = [Meal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,20 +27,29 @@ class MealTimeViewController: UIViewController {
         
         registerNib()
         
-        parseMeals()
+        let urlString = mealDataApiUrl
+        if let url = URL(string: urlString) {
+            if let data = try? Data(contentsOf: url) {
+                parse(json: data)
+            }
+        }
+    }
+    
+    func parse(json: Data) {
+        let decoder = JSONDecoder()
+        if let jsonMeals = try? decoder.decode([Meal].self, from: json) {
+
+            for r in jsonMeals {
+                newMeals.append(r)
+            }
+
+            tableView.reloadData()
+        }
     }
     
     func registerNib() {
         let nib = UINib(nibName: "MenuCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: menuCell)
-    }
-    
-    func parseMeals() {
-        let url = Bundle.main.url(forResource:"JSONData", withExtension: "json")!
-        let jsonData = try! Data(contentsOf: url)
-        self.meals = try! JSONDecoder().decode([Meal].self, from: jsonData)
-        
-        self.tableView.reloadData()
     }
 }
 
@@ -49,16 +60,16 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.meals.count
+        return newMeals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
-        let mealCellData = self.meals[indexPath.row]
-        
-        cell.mealNameLabel.text = mealCellData.meal_name
-        cell.mealPriceLabel.text = mealCellData.price
-        cell.shortDescription.text = mealCellData.details
+        let meal = newMeals[indexPath.row]
+    
+        cell.mealNameLabel?.text = meal.meal_name
+        cell.mealPriceLabel?.text = meal.price
+        cell.shortDescription?.text = meal.details
         
         return cell
     }
