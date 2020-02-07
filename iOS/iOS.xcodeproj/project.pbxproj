@@ -33,7 +33,7 @@
 		4C5CF583239EEDA4002AF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C6515DB239EEE2000D2F9E5 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
-		4C79C07E23B590F000A51E49 /* JSONData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = JSONData.json; path = iOS/JSONData.json; sourceTree = SOURCE_ROOT; };
+		4C79C07E23B590F000A51E49 /* JSONData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = JSONData.json; path = "iOS/Supporting Files/JSONData.json"; sourceTree = SOURCE_ROOT; };
 		4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		4C8A3E7723B96EBD00AA2046 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4CD35D4823A69EDD007A613A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -51,6 +51,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C59C55323EDAE9A00589AA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C5CF575239EEDA3002AF4CA /* AppDelegate.swift */,
+				4C5CF577239EEDA3002AF4CA /* SceneDelegate.swift */,
+				4C5CF57B239EEDA3002AF4CA /* Main.storyboard */,
+				4C5CF57E239EEDA4002AF4CA /* Assets.xcassets */,
+				4C5CF580239EEDA4002AF4CA /* LaunchScreen.storyboard */,
+				4C5CF583239EEDA4002AF4CA /* Info.plist */,
+				4C79C07E23B590F000A51E49 /* JSONData.json */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C59C55423EDAEB600589AA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4C5CF569239EEDA3002AF4CA = {
 			isa = PBXGroup;
 			children = (
@@ -70,16 +92,10 @@
 		4C5CF574239EEDA3002AF4CA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4C59C55423EDAEB600589AA1 /* Extensions */,
+				4C59C55323EDAE9A00589AA1 /* Supporting Files */,
 				4C8A3E7623B96EAE00AA2046 /* Detail  */,
 				4C6515D9239EEDFF00D2F9E5 /* Menu */,
-				4C5CF575239EEDA3002AF4CA /* AppDelegate.swift */,
-				4C5CF577239EEDA3002AF4CA /* SceneDelegate.swift */,
-				4C5CF57B239EEDA3002AF4CA /* Main.storyboard */,
-				4C5CF57E239EEDA4002AF4CA /* Assets.xcassets */,
-				4C5CF580239EEDA4002AF4CA /* LaunchScreen.storyboard */,
-				4C5CF583239EEDA4002AF4CA /* Info.plist */,
-				4C79C07E23B590F000A51E49 /* JSONData.json */,
-				4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -338,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RCM6QHD86;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = "iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RCM6QHD86;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = "iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
