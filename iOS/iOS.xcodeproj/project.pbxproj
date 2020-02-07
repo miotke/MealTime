@@ -17,8 +17,9 @@
 		4C6515DE239EEE2000D2F9E5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */; };
 		4C79C07F23B590F000A51E49 /* JSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C79C07E23B590F000A51E49 /* JSONData.json */; };
 		4C79C08123B5919900A51E49 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */; };
+		4C8A3E7823B96EBD00AA2046 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A3E7723B96EBD00AA2046 /* DetailViewController.swift */; };
 		4CD35D4923A69EDD007A613A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4823A69EDD007A613A /* Meal.swift */; };
-		4CD35D4B23A69FED007A613A /* MealRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4A23A69FED007A613A /* MealRequest.swift */; };
+		4CFB3BA523B9B243003961B4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB3BA423B9B243003961B4 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +35,9 @@
 		4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		4C79C07E23B590F000A51E49 /* JSONData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = JSONData.json; path = iOS/JSONData.json; sourceTree = SOURCE_ROOT; };
 		4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		4C8A3E7723B96EBD00AA2046 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4CD35D4823A69EDD007A613A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		4CD35D4A23A69FED007A613A /* MealRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRequest.swift; sourceTree = "<group>"; };
+		4CFB3BA423B9B243003961B4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		4C5CF574239EEDA3002AF4CA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4C8A3E7623B96EAE00AA2046 /* Detail  */,
 				4C6515D9239EEDFF00D2F9E5 /* Menu */,
 				4C5CF575239EEDA3002AF4CA /* AppDelegate.swift */,
 				4C5CF577239EEDA3002AF4CA /* SceneDelegate.swift */,
@@ -87,7 +90,6 @@
 				4C6515DA239EEE0800D2F9E5 /* View */,
 				4C5CF579239EEDA3002AF4CA /* MealTimeViewController.swift */,
 				4CD35D4823A69EDD007A613A /* Meal.swift */,
-				4CD35D4A23A69FED007A613A /* MealRequest.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -99,6 +101,15 @@
 				4C6515DC239EEE2000D2F9E5 /* MenuCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4C8A3E7623B96EAE00AA2046 /* Detail  */ = {
+			isa = PBXGroup;
+			children = (
+				4C8A3E7723B96EBD00AA2046 /* DetailViewController.swift */,
+				4CFB3BA423B9B243003961B4 /* DetailView.swift */,
+			);
+			path = "Detail ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,12 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5CF57A239EEDA3002AF4CA /* MealTimeViewController.swift in Sources */,
+				4CFB3BA523B9B243003961B4 /* DetailView.swift in Sources */,
 				4CD35D4923A69EDD007A613A /* Meal.swift in Sources */,
-				4CD35D4B23A69FED007A613A /* MealRequest.swift in Sources */,
 				4C5CF576239EEDA3002AF4CA /* AppDelegate.swift in Sources */,
 				4C6515DD239EEE2000D2F9E5 /* MenuCell.swift in Sources */,
 				4C79C08123B5919900A51E49 /* Bundle-Decodable.swift in Sources */,
 				4C5CF578239EEDA3002AF4CA /* SceneDelegate.swift in Sources */,
+				4C8A3E7823B96EBD00AA2046 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
