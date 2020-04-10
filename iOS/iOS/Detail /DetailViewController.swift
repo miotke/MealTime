@@ -11,10 +11,12 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var mealName: String?
+    var mealPrice: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("🥃 \(mealName)")
+        print("🥃 \(String(describing: mealName))")
+        print("🌱 \(mealPrice)")
         self.view.backgroundColor = UIColor.red
     }
 }

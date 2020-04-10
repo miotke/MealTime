@@ -78,6 +78,7 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let mealDetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             mealDetailViewController.mealName = meal.meal_name
+            mealDetailViewController.mealName = meal.price
             navigationController?.pushViewController(mealDetailViewController, animated: true)
         }
     }
