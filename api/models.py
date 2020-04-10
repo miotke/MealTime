@@ -9,6 +9,7 @@ class Meal(models.Model):
 
     SIDES_CHOICES = [
         ('chips', 'Chips'),
+        ('fries', 'Fries'),
         ('soup', 'Soup of the day'),
         ('veggies', 'Assorted Veggies'),
         ('bread', 'Bread'),
@@ -17,11 +18,20 @@ class Meal(models.Model):
         ('other', 'Other'),
     ]
 
+    RATING = [
+        (1, 1),
+        (2, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5),
+    ]
+
 
     meal_name = models.CharField(max_length=50)
     sides = models.CharField(max_length=20, choices=SIDES_CHOICES, default='none')
-    details = models.CharField(max_length=50)
+    details = models.CharField(max_length=256)
     price = models.DecimalField(max_digits=4, decimal_places=2)
+    rating = models.CharField(max_length=5, choices=RATING, default='NOT_PROVIDED')
 
 
     def __str__(self):
