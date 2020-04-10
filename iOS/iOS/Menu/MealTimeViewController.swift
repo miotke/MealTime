@@ -26,6 +26,7 @@ class MealTimeViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         registerNib()
+        setupNavigationControllerForTesting()
         
         let urlString = mealDataApiUrl
         if let url = URL(string: urlString) {
@@ -51,6 +52,15 @@ class MealTimeViewController: UIViewController {
         let nib = UINib(nibName: "MenuCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: menuCell)
     }
+    
+    func setupNavigationControllerForTesting() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(toDetails))
+    }
+    
+    @objc func toDetails() {
+        self.performSegue(withIdentifier: "toDetails", sender: self)
+    }
+    var selectedIndexPath: IndexPath = IndexPath()
 }
 
 // MARK: - Table View
@@ -62,6 +72,27 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newMeals.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller2 : DetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        self.navigationController?.pushViewController(controller2, animated: true)
+//        let destination = DetailViewController()
+//        navigationController?.pushViewController(destination, animated: true)
+//        let indexPath = tableView.indexPathForSelectedRow
+//        let currentCell = tableView.cellForRow(at: indexPath!)!
+        
+//        meal = currentCell.textLabel?.text
+        
+    }
+    
+//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toDetails" {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let destination = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//            navigationController?.pushViewController(destination, animated: true)
+//        }
+//    }
+//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
