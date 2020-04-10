@@ -80,7 +80,7 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
         let meal = newMeals[indexPath.row]
     
         cell.mealNameLabel?.text = meal.meal_name
-        cell.mealPriceLabel?.text = meal.price
+        cell.mealPriceLabel?.text = "$\(meal.price)"
         cell.shortDescription?.text = meal.details
         
         return cell

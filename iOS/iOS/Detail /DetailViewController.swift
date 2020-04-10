@@ -18,7 +18,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         print("🥃 \(String(describing: mealName!))")
         print("🌱 \(String(describing: mealPrice!))")
-        createLabel()
+//        createLabel()
+        setupNavigationController()
     }
     
     func createLabel() {
@@ -33,5 +34,11 @@ class DetailViewController: UIViewController {
             mealNameLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             mealNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
+    }
+}
+
+extension DetailViewController {
+    func setupNavigationController() {
+        navigationItem.title = mealName
     }
 }
