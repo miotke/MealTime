@@ -60,7 +60,6 @@ class MealTimeViewController: UIViewController {
     @objc func toDetails() {
         self.performSegue(withIdentifier: "toDetails", sender: self)
     }
-    var selectedIndexPath: IndexPath = IndexPath()
 }
 
 // MARK: - Table View
@@ -74,25 +73,14 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller2 : DetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        self.navigationController?.pushViewController(controller2, animated: true)
-//        let destination = DetailViewController()
-//        navigationController?.pushViewController(destination, animated: true)
-//        let indexPath = tableView.indexPathForSelectedRow
-//        let currentCell = tableView.cellForRow(at: indexPath!)!
+        print("Row selected \(indexPath.row)")
+        let meal = newMeals[indexPath.row]
         
-//        meal = currentCell.textLabel?.text
-        
+        if let mealDetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            mealDetailViewController.mealName = meal.meal_name
+            navigationController?.pushViewController(mealDetailViewController, animated: true)
+        }
     }
-    
-//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toDetails" {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let destination = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//            navigationController?.pushViewController(destination, animated: true)
-//        }
-//    }
-//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
