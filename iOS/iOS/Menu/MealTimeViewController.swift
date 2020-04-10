@@ -26,7 +26,6 @@ class MealTimeViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         registerNib()
-        setupNavigationControllerForTesting()
         
         let urlString = mealDataApiUrl
         if let url = URL(string: urlString) {
@@ -52,14 +51,6 @@ class MealTimeViewController: UIViewController {
         let nib = UINib(nibName: "MenuCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: menuCell)
     }
-    
-    func setupNavigationControllerForTesting() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(toDetails))
-    }
-    
-    @objc func toDetails() {
-        self.performSegue(withIdentifier: "toDetails", sender: self)
-    }
 }
 
 // MARK: - Table View
@@ -78,7 +69,8 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let mealDetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             mealDetailViewController.mealName = meal.meal_name
-            mealDetailViewController.mealName = meal.price
+            mealDetailViewController.mealPrice = meal.price
+            mealDetailViewController.mealNameLabel.text = meal.meal_name
             navigationController?.pushViewController(mealDetailViewController, animated: true)
         }
     }
