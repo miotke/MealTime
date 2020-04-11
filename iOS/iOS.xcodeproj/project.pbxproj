@@ -19,6 +19,7 @@
 		4C8A3E7823B96EBD00AA2046 /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A3E7723B96EBD00AA2046 /* MealDetailViewController.swift */; };
 		4CD35D4923A69EDD007A613A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD35D4823A69EDD007A613A /* Meal.swift */; };
 		4CE7132624422EB2008A90A7 /* MTOrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7132524422EB2008A90A7 /* MTOrderButton.swift */; };
+		4CE71328244243C4008A90A7 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE71327244243C4008A90A7 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4C8A3E7723B96EBD00AA2046 /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
 		4CD35D4823A69EDD007A613A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		4CE7132524422EB2008A90A7 /* MTOrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTOrderButton.swift; sourceTree = "<group>"; };
+		4CE71327244243C4008A90A7 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		4C59C55423EDAEB600589AA1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4CE71327244243C4008A90A7 /* Alerts.swift */,
 				4C79C08023B5919900A51E49 /* Bundle-Decodable.swift */,
 			);
 			path = Extensions;
@@ -212,6 +215,7 @@
 				4C79C08123B5919900A51E49 /* Bundle-Decodable.swift in Sources */,
 				4C5CF578239EEDA3002AF4CA /* SceneDelegate.swift in Sources */,
 				4C8A3E7823B96EBD00AA2046 /* MealDetailViewController.swift in Sources */,
+				4CE71328244243C4008A90A7 /* Alerts.swift in Sources */,
 				4CE7132624422EB2008A90A7 /* MTOrderButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

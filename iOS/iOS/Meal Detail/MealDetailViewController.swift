@@ -9,7 +9,7 @@
 import UIKit
 
 class MealDetailViewController: UIViewController {
-    
+        
     var mealName: String?
     var mealDetails: String?
     var sides: String?
@@ -28,6 +28,10 @@ class MealDetailViewController: UIViewController {
         mealPriceLabel.text = "$\(mealPrice ?? "🤷‍♂️")"
         mealRatingLabel.text = "Rating: \(mealRating ?? "N/A")"
         mealDescription.text = mealDetails
+    }
+        
+    @IBAction func placeOrderButton(_ sender: Any) {
+        orderAlertController()
     }
 }
 
