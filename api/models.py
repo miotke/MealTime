@@ -19,11 +19,22 @@ class Meal(models.Model):
     ]
 
     RATING = [
-        (1, 1),
-        (2, 2),
-        (3, 3),
-        (4, 4),
-        (5, 5),
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    ]
+
+    EMOJI = [
+        ('burger', '🍔'),
+        ('burrito', '🌯'),
+        ('tacos', '🌮'),
+        ('pizza', '🍕'),
+        ('salad', '🥗'),
+        ('chicken', '🍗'),
+        ('sandwich', '🥪'),
+        ('fish', '🎣'),
     ]
 
 
@@ -32,7 +43,7 @@ class Meal(models.Model):
     details = models.CharField(max_length=256)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     rating = models.CharField(max_length=5, choices=RATING, default='NOT_PROVIDED')
-
+    emoji = models.CharField(max_length=10, choices=EMOJI, default='🍽')
 
     def __str__(self):
         return self.meal_name
