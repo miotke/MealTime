@@ -13,5 +13,6 @@ struct Meal: Codable {
     let details: String
     let sides: String
     let price: String
-    let rating: Int
+    let rating: String
+    let emoji: String
 }

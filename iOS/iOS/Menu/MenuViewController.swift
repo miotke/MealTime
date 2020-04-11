@@ -72,6 +72,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             mealDetailViewController.mealPrice = meal.price
             mealDetailViewController.mealDetails = meal.details
             mealDetailViewController.mealRating = String(meal.rating)
+            mealDetailViewController.emoji = meal.emoji
             navigationController?.pushViewController(mealDetailViewController, animated: true)
         }
     }
