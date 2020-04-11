@@ -128,6 +128,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nrg-fg-hfv"/>
                     <connections>
+                        <outlet property="mealDescription" destination="KWh-Fc-AUk" id="4tK-xq-qKu"/>
                         <outlet property="mealImage" destination="JN7-Sx-EOJ" id="6cc-9u-YpP"/>
                         <outlet property="mealPriceLabel" destination="Dv4-tq-My4" id="8mE-4x-8xp"/>
                         <outlet property="mealRatingLabel" destination="eVZ-aA-Iyt" id="VoL-Vr-pXO"/>
