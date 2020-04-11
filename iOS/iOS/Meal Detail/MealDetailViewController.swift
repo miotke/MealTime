@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class MealDetailViewController: UIViewController {
     
     var mealName: String?
     var mealDetails: String?
@@ -31,8 +31,9 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController {
+extension MealDetailViewController {
     func setupNavigationController() {
         navigationItem.title = mealName
+        
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealTimeViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
       
@@ -54,7 +54,7 @@ class MealTimeViewController: UIViewController {
 }
 
 // MARK: - Table View
-extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -67,7 +67,7 @@ extension MealTimeViewController: UITableViewDelegate, UITableViewDataSource {
         print("Row selected \(indexPath.row)")
         let meal = newMeals[indexPath.row]
         
-        if let mealDetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+        if let mealDetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? MealDetailViewController {
             mealDetailViewController.mealName = meal.meal_name
             mealDetailViewController.mealPrice = meal.price
             mealDetailViewController.mealDetails = meal.details
