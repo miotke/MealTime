@@ -26,15 +26,17 @@ class Meal(models.Model):
         ('5', '5'),
     ]
 
+    # I do understand that having emoji in code is not the best practice
+    # but in cases like this it's more declaritive than the unicode characters
     EMOJI = [
-        ('burger', '🍔'),
-        ('burrito', '🌯'),
-        ('tacos', '🌮'),
-        ('pizza', '🍕'),
-        ('salad', '🥗'),
-        ('chicken', '🍗'),
-        ('sandwich', '🥪'),
-        ('fish', '🎣'),
+        ('🍔', '🍔'),
+        ('🌯', '🌯'),
+        ('🌮', '🌮'),
+        ('🍕', '🍕'),
+        ('🥗', '🥗'),
+        ('🍗', '🍗'),
+        ('🥪', '🥪'),
+        ('🎣', '🎣'),
     ]
 
 

@@ -15,6 +15,7 @@ class MealDetailViewController: UIViewController {
     var sides: String?
     var mealPrice: String?
     var mealRating: String?
+    var emoji: String?
     
     @IBOutlet weak var mealPriceLabel: UILabel!
     @IBOutlet weak var mealRatingLabel: UILabel!
@@ -25,13 +26,14 @@ class MealDetailViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationController()
         configureDetailLabels()
-        configureMealImage()
+//        configureMealImage()
     }
     
     func configureDetailLabels() {
         mealPriceLabel.text = "$\(mealPrice ?? "🤷‍♂️")"
         mealRatingLabel.text = "Rating: \(mealRating ?? "N/A")"
         mealDescription.text = mealDetails
+        mealImage.text = emoji
     }
     
     func configureMealImage() {
