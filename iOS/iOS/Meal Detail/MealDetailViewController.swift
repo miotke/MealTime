@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    
+class MealDetailViewController: UIViewController {
+        
     var mealName: String?
     var mealDetails: String?
     var sides: String?
@@ -24,15 +24,32 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationController()
-        
+        configureDetailLabels()
+        configureMealImage()
+    }
+    
+    func configureDetailLabels() {
         mealPriceLabel.text = "$\(mealPrice ?? "🤷‍♂️")"
         mealRatingLabel.text = "Rating: \(mealRating ?? "N/A")"
         mealDescription.text = mealDetails
     }
-}
-
-extension DetailViewController {
+    
+    func configureMealImage() {
+        if mealName!.contains("Burger") {
+            mealImage.text = "🍔"
+        } else if mealName!.contains("Burrito") {
+            mealImage.text = "🌯"
+        } else {
+            mealImage.text = "🤦‍♂️"
+        }
+    }
+    
     func setupNavigationController() {
         navigationItem.title = mealName
     }
+        
+    @IBAction func placeOrderButton(_ sender: Any) {
+        orderAlertController()
+    }
 }
+
