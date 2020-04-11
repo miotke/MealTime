@@ -64,7 +64,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row selected \(indexPath.row)")
         let meal = newMeals[indexPath.row]
         
         if let mealDetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? MealDetailViewController {

@@ -26,7 +26,6 @@ class MealDetailViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationController()
         configureDetailLabels()
-//        configureMealImage()
     }
     
     func configureDetailLabels() {
@@ -34,16 +33,6 @@ class MealDetailViewController: UIViewController {
         mealRatingLabel.text = "Rating: \(mealRating ?? "N/A")"
         mealDescription.text = mealDetails
         mealImage.text = emoji
-    }
-    
-    func configureMealImage() {
-        if mealName!.contains("Burger") {
-            mealImage.text = "🍔"
-        } else if mealName!.contains("Burrito") {
-            mealImage.text = "🌯"
-        } else {
-            mealImage.text = "🤦‍♂️"
-        }
     }
     
     func setupNavigationController() {
@@ -54,4 +43,3 @@ class MealDetailViewController: UIViewController {
         orderAlertController()
     }
 }
-
