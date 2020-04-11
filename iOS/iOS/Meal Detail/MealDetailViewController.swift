@@ -24,10 +24,28 @@ class MealDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationController()
-        
+        configureDetailLabels()
+        configureMealImage()
+    }
+    
+    func configureDetailLabels() {
         mealPriceLabel.text = "$\(mealPrice ?? "🤷‍♂️")"
         mealRatingLabel.text = "Rating: \(mealRating ?? "N/A")"
         mealDescription.text = mealDetails
+    }
+    
+    func configureMealImage() {
+        if mealName!.contains("Burger") {
+            mealImage.text = "🍔"
+        } else if mealName!.contains("Burrito") {
+            mealImage.text = "🌯"
+        } else {
+            mealImage.text = "🤦‍♂️"
+        }
+    }
+    
+    func setupNavigationController() {
+        navigationItem.title = mealName
     }
         
     @IBAction func placeOrderButton(_ sender: Any) {
@@ -35,9 +53,3 @@ class MealDetailViewController: UIViewController {
     }
 }
 
-extension MealDetailViewController {
-    func setupNavigationController() {
-        navigationItem.title = mealName
-        
-    }
-}
