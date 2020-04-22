@@ -16,3 +16,6 @@ This project is strictly for learning purposes and is not intended for productio
 ### Usage
 * Open the XCode project and build, the app should connect to the live API.
 * Must target iOS 13+
+
+![meal time gif](images/MealTimeVideo.gif)
+
