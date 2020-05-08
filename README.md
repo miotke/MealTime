@@ -14,7 +14,7 @@ This project is strictly for learning purposes and is not intended for productio
 * Django REST framework
 
 ### Usage
-* Open the XCode project under `MealTime/iOS/iOS.xcodeproj` and run+build, the app should launch in the iOS simulator and connect to the live API.
+* Open the XCode project under `MealTime/iOS/iOS.xcodeproj` and build+run, the app should launch in the iOS simulator and connect to the live API.
 * Must target iOS 13+
 
 <p align="center">
