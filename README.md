@@ -15,7 +15,7 @@ This project is strictly for learning purposes and is not intended for productio
 
 ### Usage
 * Open the XCode project under `MealTime/iOS/iOS.xcodeproj` and build+run, the app should launch in the iOS simulator and connect to the live API.
-* Must target iOS 13+
+* Targets iOS 13+
 
 <p align="center">
   <img src="images/MealTimeVideo.gif">
