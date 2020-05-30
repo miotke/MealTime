@@ -35,6 +35,12 @@ class MenuViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: index, animated: false)
+        }
+    }
+    
     func parse(json: Data) {
         let decoder = JSONDecoder()
         if let jsonMeals = try? decoder.decode([Meal].self, from: json) {
