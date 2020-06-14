@@ -20,3 +20,7 @@ This project is strictly for learning purposes and is not intended for productio
 <p align="center">
   <img src="images/MealTimeVideo.gif">
 </p>
+
+### Credits
+* [Icons8](https://icons8.com) for the app icon
+* [MakeAppIcon](https://makeappicon.com) for generating the app icon
