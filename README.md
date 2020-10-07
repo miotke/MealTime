@@ -2,7 +2,7 @@
 
 `portfolio`
 
-**This project is not being used by anyone was built strictly for learning purposes.**
+**This project is not being used by anyone and was built strictly for learning purposes.**
 
 A simple Django REST API that will serve a lunch menu. This API is accessed by the iOS app that is included in this repo.
 
